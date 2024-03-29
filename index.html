@@ -1,217 +1,1237 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Pure.Navigator 1.1.17</title>
-    <style>
-      html,
-      body {
-        font-family: Verdana;
-        font-size: 13px;
-        margin: 0;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 5px 0;
-      }
-      a {
-        cursor: pointer;
-        text-decoration: none;
-      }
-      #app {
-        background-color: #f6f6ef;
-      }
-      #loading {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100px;
-        margin-left: -50px;
-        margin-top: -30px;
-        text-align: center;
-      }
-      #header {
-        background-color: #f60;
-        height: 24px;
-      }
-      #header h1 {
-        font-weight: bold;
-        font-size: 13px;
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0;
-      }
-      #header h1 a {
-        color: #000;
-      }
-      #yc {
-        border: 1px solid #fff;
-        margin: 2px;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      #yc img {
-        vertical-align: middle;
-      }
-      #nav {
-        padding: 10px 10px 10px 40px;
-        background-color: #333;
-        color: #fff;
-      }
-      #nav a {
-        color: #fff;
-        margin-right: 10px;
-      }
-      li.story {
-        padding: 2px 0 2px 40px;
-        position: relative;
-        transition: background-color 0.2s ease;
-      }
-      li.story p {
-        margin: 2px 0;
-      }
-      li.story .title {
-        color: #000;
-      }
-      li.story .title:visited {
-        color: #828282;
-      }
-      li.story .index {
-        color: #828282;
-        position: absolute;
-        width: 30px;
-        text-align: right;
-        left: 0;
-        top: 4px;
-      }
-      li.story .domain,
-      li.story .subtext {
-        font-size: 0.75em;
-        color: #828282;
-      }
-      li.story .subtext a:hover {
-        text-decoration: underline;
-      }
-      li.story.current {
-        background-color: #ededdf;
-      }
-      .sidebar {
-        color: #828282;
-        transition: all 0.3s ease;
-        position: fixed;
-        right: 0;
-        top: 0;
-        height: 100%;
-        background-color: #f6f6ef;
-        box-shadow: 0 0 8px rgba(0,0,0,0.15);
-        overflow-y: scroll;
-        width: 500px;
-        box-sizing: border-box;
-        padding: 10px 30px;
-      }
-      .sidebar .close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px;
-      }
-      .sidebar.v-enter,
-      .sidebar.v-leave {
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-      }
-      .sidebar.user li {
-        margin: 5px 0;
-      }
-      .sidebar.user .label {
-        display: inline-block;
-        min-width: 60px;
-      }
-      .sidebar.user .about {
-        margin-top: 1em;
-      }
-      @media screen and (max-width: 500px) {
-        .sidebar {
-          width: 100%;
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0, user-scalable=yes"
+      name=viewport>
+<meta name="app" content="app-id=1464655451, app-argument=uplusapp://open"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<head>
+    <title>一创智富通APP</title>
+    <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon"/>
+    <!-- 一创cdn的jquery地址 -->
+    <script src="https://cdn.fcsc.cn/con/group1/M00/00/5F/CuAMLWKBr2WAKXOOAAFdhLPrHWA4151.js"></script>
+    <!-- 一创cdn的jweixin地址 -->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+
+    <!-- 一创cdn的vConsole地址 -->
+    <script src="https://cdn.fcsc.cn/con/group1/M00/00/57/CtAMLWSrvG2AUwTcAAFlUQFmCWg2143.js"></script>
+    <script>
+        if (location.href.indexOf('https://digittest.95358.com') != -1 || location.href.indexOf('https://digitdev.95358.com') != -1) {
+            window.vConsole = new window.VConsole()
         }
-      }
+    </script>
+
+
+    <script>
+        (function (w, d, s, q) {
+            w[q] = w[q] || [];
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
+            j.async = true;
+            j.id = 'beacon-aplus';
+            j.src = 'https://cdn.fcsc.cn/aliyunmd/203498814.js';
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'aplus_queue');
+
+        // 阿里埋点配置
+        if (location.href.indexOf('https://digit.95358.com') != -1) {
+            aplus_queue.push({
+                action: 'aplus.setMetaInfo',
+                arguments: ['aplus-rhost-v', 'track.fcsc.com'],
+            });
+            aplus_queue.push({
+                action: 'aplus.setMetaInfo',
+                arguments: ['appKey', 'tab6wr6pqjh6vlbf01y3w0an'],
+            });
+        } else {
+            aplus_queue.push({
+                action: 'aplus.setMetaInfo',
+                arguments: ['aplus-rhost-v', 'tracktest.fcsc.com:8444'],
+            });
+            aplus_queue.push({
+                action: 'aplus.setMetaInfo',
+                arguments: ['appKey', 'i9ia30sy1ht26celu97q9tsi'],
+            });
+        }
+
+        // 开启手动pv
+        aplus_queue.push({
+            action: 'aplus.setMetaInfo',
+            arguments: ['aplus-waiting', 'MAN'],
+        });
+        //开启调试模式
+        aplus_queue.push({
+            action: 'aplus.setMetaInfo',
+            arguments: ['DEBUG', true],
+        });
+        //先开启全埋点能⼒
+        aplus_queue.push({
+            action: 'aplus.setMetaInfo',
+            arguments: ['aplus-autotrack-enabled', true],
+        });
+
+        aplus_queue.push({
+            action: 'aplus.setMetaInfo',
+            arguments: ['_user_id', localStorage.getItem('Tel') || ''],
+        });
+
+
+        aplus_queue.push({
+            'action': 'aplus.record',
+            'arguments': ['downloadApp', 'EXP', {
+                ts: new Date().getTime(), //当前时间戳
+                page_title: '智富通app下载页',
+                activityID: 'downloadApp',
+            }]
+        });
+
+
+    </script>
+
+
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            color: #333333;
+        }
+
+        .msgwarp {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, .7);
+            filter: alpha(opacity=50);
+        }
+
+        .msgwarp .box {
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid #999;
+            margin: 20% auto;
+            background-color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #imgLogo {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            /* display: none; */
+        }
+
+        #imgDiv {
+            min-height: 100vh;
+        }
+
+        #downLoad {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            display: none;
+        }
+
+        #downLoad .left {
+            width: 50%;
+            height: 55px;
+            background-color: rgba(251, 188, 115);
+            border: none;
+            line-height: 55px;
+            font-size: 16px;
+            color: rgba(148, 56, 0);
+            font-weight: bold;
+            text-align: center;
+            border-right: 1px solid rgba(148, 56, 0);
+
+        }
+
+        #downLoad .right {
+            width: 50%;
+            height: 55px;
+            background-color: rgba(251, 188, 115);
+            border: none;
+            line-height: 55px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            color: rgba(148, 56, 0);
+        }
+
+        #wxopenappBtn {
+            width: 100%;
+            height: 60px;
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            display: none;
+        }
+
+        .external-links {
+            height: 100vh;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-bottom: 55px;
+        }
+
+        iframe {
+            height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+
+        /* 设置滚动条的样式 */
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        ::scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        /* 滚动槽 */
+        ::-webkit-scrollbar-track {
+            display: none;
+        }
+
+        ::scrollbar-track {
+            display: none;
+        }
+
+        /* 滚动条滑块 */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #006666;
+            -webkit-box-shadow: inset 0 0 1px #006666;
+        }
+
+        ::scrollbar-thumb {
+            border-radius: 10px;
+            background: #006666;
+            -webkit-box-shadow: inset 0 0 1px #006666;
+        }
+
+        .openwxbtn {
+            width: 100%;
+            height: 60px;
+            display: block;
+            border: none;
+            outline: none;
+            color: #943800;
+            background-color: #F4973C;
+            font-size: 18px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        #downLoadByIOS {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: none;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #D62F33;
+        }
+
+        #downLoadByIOS .left {
+            width: 48%;
+            height: 55px;
+            border: 1px solid #fff0dc;
+            line-height: 55px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-right: 2%;
+            background-color: #D62F33;
+        }
+
+        #downLoadByIOS .right {
+            width: 48%;
+            height: 55px;
+            background: -webkit-linear-gradient(to right,#FEF4EB,#F9DFCC); /* Safari 5.1-6.0 */
+            background: -o-linear-gradient(to right,#FEF4EB,#F9DFCC); /* Opera 11.1-12.0 */
+            background: -moz-linear-gradient(to right,#FEF4EB,#F9DFCC); /* Firefox 3.6-15 */
+            background: linear-gradient(to right,#FEF4EB,#F9DFCC); /* 标准语法 */
+            border: none;
+            line-height: 55px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            color: #D62F33;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 2%;
+        }
 
     </style>
-  </head>
-  <body>
-    <div id="app">
-      <!-- loading -->
-      <div id="loading" v-show="stories.length === 0">Loading...</div>
-      <!-- header -->
-      <div id="header">
-        <a id="yc" href="http://www.ycombinator.com">
-          <img src="https://news.ycombinator.com/y18.gif">
-        </a>
-        <h1><a href="#1">Hacker News</a></h1>
-      </div>
-      <!-- main list -->
-      <ul>
-        <li v-repeat="stories" trackby="id" class="story" v-class="current: story.id === id">
-          <span class="index">
-            {{(page - 1) * 30 + $index + 1}}.
-          </span>
-          <p>
-            <a class="title" href="{{url || ('http://news.ycombinator.com/item?id=' + id)}}" target="_blank">
-              {{title}}
-            </a>
-            <span class="domain" v-show="type != 'job'">
-              ({{url | domain}})
-            </span>
-          </p>
-          <p class="subtext">
-            <span v-show="type != 'job'">
-              {{score}} points by
-              <a v-on="click:openUser(by)">{{by}}</a>
-            </span>
-            {{time | fromNow}} ago
-            <span v-show="type != 'job'">
-              | <a v-on="click:openComments($data)">comments</a>
-            </span>
-          </p>
-        </li>
-      </ul>
-      <!-- navigation -->
-      <div id="nav" v-show="stories.length > 0">
-        <a v-if="page > 1" href="#{{page - 1}}">&lt; prev</a>
-        <a v-if="page < 4" href="#{{page + 1}}">more...</a>
-      </div>
-      <!-- user sidebar -->
-      <div class="sidebar user" v-if="user" v-transition>
-        <ul>
-          <li><span class="label">user:</span> {{user.id}}</li>
-          <li><span class="label">created:</span> {{user.created | fromNow}} ago</li>
-          <li><span class="label">karma:</span> {{user.karma}}</li>
-          <li>
-            <span class="label">about:</span>
-            <div class="about" v-html="user.about"></div>
-          </li>
-        </ul>
-        <a class="close" v-on="click:closeSidebar">&times;</a>
-      </div>
-      <!-- comments sidebar -->
-      <div class="sidebar comments" v-if="story" v-transition>
-        <ul v-repeat="story.kids">{{$value}}</ul>
-        <a class="close" v-on="click:closeSidebar">&times;</a>
-      </div>
+
+</head>
+<body>
+
+<div class="msgwarp" id="msgwarp" style="display: none">
+    <p>
+        <img src="https://cdn.fcsc.cn/con/group1/M00/00/0F/CuAMLV6f8GqAaJAeAAEIc_lS3qU205.png" style="width: 100%;"
+             alt="微信打开">
+    </p>
+</div>
+
+<div id="imgDiv" style="z-index: -1;font-size: 0;">
+    <div id="isIframe" class="external-links">
+        <iframe
+                id="ifra"
+                name="isIframe"
+                src=""
+                frameborder="0"
+                allow="fullscreen"
+                scrolling="auto"></iframe>
     </div>
-    <script src="dist/build.js"></script>  
-    <script type="text/javascript" charset="utf-8">
-      if (/Atom/.test(window.navigator.userAgent)) {
-        console.log('Welcome to Electron')
-        document.title = 'Power by Electron 2013.8'
-        var ipc = require('ipc');
-        window.addEventListener('contextmenu', function (e) {
-          e.preventDefault();
-          ipc.send('menu');
-        }, false);
-      }
-    </script>
-  </body>
+
+    <div id="noIframe">
+        <div style="padding-bottom: 16px;background: rgb(214,47,51);">
+            <img id="imgMain"/>
+        </div>
+    </div>
+
+    <div id="wxopenappBtn">
+        <wx-open-launch-app
+                id="launch-btn"
+                appid="wxafeec35421d29494"
+                extinfo=""
+                style="text-align: center;width: 100vw;height: 60px;line-height: 60px;"
+        >
+            <script type="text/wxtag-template">
+                <style>
+                    .openwxbtn {
+                        width: 100%;
+                        height: 60px;
+                        display: block;
+                        border: none;
+                        outline: none;
+                        color: #943800;
+                        background-color: #F4973C;
+                        font-size: 18px;
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                    }
+                </style>
+                <button class="openwxbtn" id="openwxbtn">
+                    打开APP
+                </button>
+            </script>
+        </wx-open-launch-app>
+    </div>
+
+    <img id="imgLogo"
+         src='https://cdn.fcsc.cn/con/group1/M00/00/0F/CuAMLl6pJKCAGs2AAAAPKwmHdmU068.png'
+         onclick="hrefOk(true)" width="100%">
+
+    <div id="downLoadByIOS">
+        <button class="left" onclick="go()">已安装?打开APP</button>
+        <button class="right" onclick="loadingFn()">下载APP</button>
+    </div>
+
+    <div id="downLoad">
+        <button class="left" onclick="goOfficial()">官方下载</button>
+        <button class="right" onclick="goApplication()">应用商店下载</button>
+    </div>
+
+    <div id="iframeHolder"></div>
+
+
+</div>
+<script type="text/javascript">
+    function isSupportWebp() {
+        try {
+            return document.createElement('canvas').toDataURL('img/login', 0.5).indexOf('data:image/login') === 0;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    function adjuest() {
+        var u = navigator.userAgent;
+        var w = window.innerWidth;
+
+        var img = document.getElementById("imgMain");
+        img.src = "https://cdn.fcsc.cn/con/group1/M00/00/5C/CtAMLWTjREOAOeAcAAO0nnpldU8807.png";
+        var imglog = document.getElementById("imgLogo");
+        if (/Windows NT/gi.test(u)){
+            w = w - 25;
+        }
+        if (w > 0) {
+            img.width = w;
+        }
+        // 202310 IOS且不在微信里面 展示两个按钮，不尝试自动打开app
+        if(/iPhone/gi.test(navigator.userAgent) && !/MicroMessenger/gi.test(navigator.userAgent)){
+            $('#imgLogo').hide();
+            $('#downLoadByIOS').show()
+        }
+    }
+
+    ((function () {
+        window.webpAvaliable = isSupportWebp();
+        adjuest();
+    })());
+
+    window.onresize = adjuest;
+    var wxheader = {
+        bankHeader: window.location.href.indexOf('https://digit.95358.com') != -1 ? 'https://yccft.fcsc.com/servlet/json' : 'https://wxnewtest.fcsc.com/servlet/json',
+        weixinpk: window.location.href.indexOf('https://digit.95358.com') != -1 ? 'gh_2bf428b04db6' : 'gh_d726bbfffcf2'
+    }
+    var wxParam = {};
+    var wx_share = function (param, url) {
+        $.ajax({
+            url: wxheader.bankHeader,
+            data: url,
+            type: 'get',
+            success: function (res) {
+                var res = JSON.parse(res);
+                console.log(res)
+                alert(res)
+                if (res.error_no == 0) {
+                    var data = res.results[0];
+                    wxParam = param;
+                    // 分享配置
+                    wx.config({
+                        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: data.appid, // 必填，企业号的唯一标识
+                        timestamp: data.timestamp, // 必填，生成签名的时间戳
+                        nonceStr: data.nonceStr, // 必填，生成签名的随机串
+                        signature: data.signature,// 必填，签名，见附录1
+                        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'],  // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                        openTagList: ['wx-open-launch-app'], // 这里要配置一下,需要用的开放标签
+                    });
+                }
+            },
+            error: function (res) {
+            }
+        })
+    }
+
+    wx_share({
+        title: "一创智富通",
+        desc: "A股上市券商第一创业证券为投资者倾力打造的智能化投资理财平台。",
+        link: window.location.href,
+        imgUrl: "https://cdn.fcsc.cn/con/group1/M00/00/10/CuAMLV7Hq_yAYjQlAADMZS5Gt3I969.png",
+        type: "link", //分享类型,music、video或link，不填默认为link,
+        dataUrl: '',//如果type是music或video，则要提供数据链接，默认为空,
+        successFn: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancelFn: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    }, {url: window.location.href.split('#')[0], weixinpk: wxheader.weixinpk, funcNo: '1000003'}); //正式
+
+    wx.error(function (res) {
+        alert("error" + JSON.stringify(res));
+    });
+
+    wx.ready(function () {
+        //分享到朋友圈
+        wx.onMenuShareTimeline({
+            title: wxParam.title,
+            link: wxParam.link,
+            imgUrl: wxParam.imgUrl,
+            success: function () {
+                if (wxParam.successFn) {
+                    wxParam.successFn();
+                }
+            }, cancel: function () {
+                if (wxParam.cancelFn) {
+                    wxParam.cancelFn();
+                }
+            }
+        });
+
+        //分享给朋友
+        wx.onMenuShareAppMessage({
+            title: wxParam.title,
+            desc: wxParam.desc,
+            link: wxParam.link,
+            imgUrl: wxParam.imgUrl,
+            type: wxParam.type,
+            dataUrl: wxParam.dataUrl,
+            success: function () {
+                if (wxParam.successFn) {
+                    wxParam.successFn();
+                }
+            }, cancel: function () {
+                if (wxParam.cancelFn) {
+                    wxParam.cancelFn();
+                }
+            }
+        });
+
+        //分享到QQ
+        wx.onMenuShareQQ({
+            title: wxParam.title,
+            desc: wxParam.desc,
+            link: wxParam.link,
+            imgUrl: wxParam.imgUrl,
+            success: function () {
+                if (wxParam.successFn) {
+                    wxParam.successFn();
+                }
+            }, cancel: function () {
+                if (wxParam.cancelFn) {
+                    wxParam.cancelFn();
+                }
+            }
+        });
+
+        //分享到腾讯微博
+        wx.onMenuShareWeibo({
+            title: wxParam.title,
+            desc: wxParam.desc,
+            link: wxParam.link,
+            imgUrl: wxParam.imgUrl,
+            success: function () {
+                if (wxParam.successFn) {
+                    wxParam.successFn();
+                }
+            }, cancel: function () {
+                if (wxParam.cancelFn) {
+                    wxParam.cancelFn();
+                }
+            }
+        });
+
+        wx.checkJsApi({
+            jsApiList: [
+                'wx-open-launch-app',
+            ], // 需要检测的 JS 接口列表，所有 JS 接口列表见附录2,
+            success: function (res) {
+                console.log('wxJsApi success:', res)
+            },
+            fail: (err) => {
+                console.log('wxJsApi fail:', err)
+            }
+        })
+
+        var btnandriod = document.getElementById('launch-btn');
+        btnandriod.addEventListener('launch', function (e) {
+            console.log('跳转success', e);
+            setTimeout(function () {
+                aplus_queue.push({
+                    action: 'aplus.record',
+                    arguments: ['downloadApp_wxbtnClk', 'CLK', {
+                        //必传参数
+                        ts: new Date().getTime(), //当前时间戳
+                        page_title: '智富通app下载页',
+                        page_name: 'downloadApp',
+                        activityID: 'downloadApp',
+                    }]
+                })
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }, 1500)
+        });
+
+        btnandriod.addEventListener('error', function (e) {
+            console.log('fail', e.detail);
+            console.log('跳转失败', JSON.stringify(e))
+            var _msgwarp = document.getElementById("msgwarp");
+            _msgwarp.setAttribute("style", "display:block");
+        });
+
+    })
+
+
+    //获取路径参数
+    function getparame(obj) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            obj[[pair[0]]] = pair[1]
+        }
+    }
+
+    function Base64() {
+        // private property
+        _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+        // public method for encoding
+        this.encode = function (input) {
+            var output = "";
+            var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+            var i = 0;
+            input = _utf8_encode(input);
+            while (i < input.length) {
+                chr1 = input.charCodeAt(i++);
+                chr2 = input.charCodeAt(i++);
+                chr3 = input.charCodeAt(i++);
+                enc1 = chr1 >> 2;
+                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                enc4 = chr3 & 63;
+                if (isNaN(chr2)) {
+                    enc3 = enc4 = 64;
+                } else if (isNaN(chr3)) {
+                    enc4 = 64;
+                }
+                output = output +
+                    _keyStr.charAt(enc1) + _keyStr.charAt(enc2) +
+                    _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+            }
+            return output;
+        }
+
+        // public method for decoding
+        this.decode = function (input) {
+            var output = "";
+            var chr1, chr2, chr3;
+            var enc1, enc2, enc3, enc4;
+            var i = 0;
+            input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+            while (i < input.length) {
+                enc1 = _keyStr.indexOf(input.charAt(i++));
+                enc2 = _keyStr.indexOf(input.charAt(i++));
+                enc3 = _keyStr.indexOf(input.charAt(i++));
+                enc4 = _keyStr.indexOf(input.charAt(i++));
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+                output = output + String.fromCharCode(chr1);
+                if (enc3 != 64) {
+                    output = output + String.fromCharCode(chr2);
+                }
+                if (enc4 != 64) {
+                    output = output + String.fromCharCode(chr3);
+                }
+            }
+            output = _utf8_decode(output);
+            return output;
+        }
+
+        // private method for UTF-8 encoding
+        _utf8_encode = function (string) {
+            string = string.replace(/\r\n/g, "\n");
+            var utftext = "";
+            for (var n = 0; n < string.length; n++) {
+                var c = string.charCodeAt(n);
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                } else if ((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                } else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+
+            }
+            return utftext;
+        }
+
+        // private method for UTF-8 decoding
+        _utf8_decode = function (utftext) {
+            var string = "";
+            var i = 0;
+            var c = c1 = c2 = 0;
+            while (i < utftext.length) {
+                c = utftext.charCodeAt(i);
+                if (c < 128) {
+                    string += String.fromCharCode(c);
+                    i++;
+                } else if ((c > 191) && (c < 224)) {
+                    c2 = utftext.charCodeAt(i + 1);
+                    string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                    i += 2;
+                } else {
+                    c2 = utftext.charCodeAt(i + 1);
+                    c3 = utftext.charCodeAt(i + 2);
+                    string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                    i += 3;
+                }
+            }
+            return string;
+        }
+    }
+
+    // adjuest();
+    var base = new Base64();
+
+    //获取参数
+    function getQueryVariable(variable) {
+        var reg = new RegExp('(^|&)' + variable + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+
+        // var temData = new URLSearchParams(window.location.search);
+        // return temData.get(key)
+
+        // 此方法会导致url后面多出%00
+        // var query = window.location.search.substring(1);
+        // var vars = query.split("&");
+        // for (var i = 0; i < vars.length; i++) {
+        //   var pair = vars[i].split("=");
+        //   if (pair[0] == variable) {
+        //     return pair[1];
+        //   }
+        // }
+        // return (false);
+    }
+
+
+    // 下载按钮点击
+    function hrefOk(isBtn) {
+        aplus_queue.push({
+            action: 'aplus.record',
+            arguments: ['downloadApp_btnClk', 'CLK', {
+                //必传参数
+                ts: new Date().getTime(), //当前时间戳
+                page_title: '智富通app下载页',
+                page_name: 'downloadApp',
+                activityID: 'downloadApp',
+            }]
+        })
+
+        //判断浏览器
+        var ua = navigator.userAgent;
+        //判断QQ打开
+        if (/ QQ\//g.test(ua)) {
+            // 引导用户在浏览器中打开
+            if (isBtn) {
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }
+            return;
+        }
+
+        //判断微信打开
+        if (/MicroMessenger/gi.test(ua)) {
+            // 引导用户在浏览器中打开
+            if (isBtn) {
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }
+            return;
+        }
+
+        //判断钉钉打开
+        if (/DingTalk/gi.test(ua)) {
+            // 引导用户在浏览器中打开
+            if (isBtn) {
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }
+            return;
+        }
+
+        //判断支付宝打开
+        if (/AlipayClient/gi.test(ua)) {
+            // 引导用户在浏览器中打开
+            if (isBtn) {
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }
+            return;
+        }
+
+        //判断微博打开
+        if (/Weibo/gi.test(ua)) {
+            // 引导用户在浏览器中打开
+            if (isBtn) {
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }
+            return;
+        }
+
+        //判断易信打开
+        if (/YiXin/gi.test(ua)) {
+            // 引导用户在浏览器中打开
+            if (isBtn) {
+                var _msgwarp = document.getElementById("msgwarp");
+                _msgwarp.setAttribute("style", "display:block");
+            }
+            return;
+        }
+
+        if (isBtn) {
+            loadingFn();
+            return;
+        }
+        go();
+
+
+    }
+
+
+    // 202303
+    var configJson = {
+        isPublish: false,
+        isCanWxOpenZFT: false,
+        openNewZFTUrl: 'tzt://com.frist/',
+        downloadNewZFTAPI: 'https://testflight.apple.com/join/Vqkxa08u',
+        downloadNewZFTAPK: 'https://cdn.fcsc.cn/yczft/app/FCSC_ZFT_TSB.apk',
+        downloadNewZFTHonorID: 'C10376203',
+        downloadNewZFTHuaweiID: 'C10376203',
+        downloadNewZFTOppoID: 'com.firstcapital',
+        downloadNewZFTVivoID: 'com.firstcapital',
+        downloadNewZFTXiaomiID: 'com.firstcapital',
+        downloadNewZFTiPad: 'https://itunes.apple.com/cn/app/yi-chuang-cai-fu-tong/id948148133?mt=8',
+        downloadNewZFTiPhone: 'https://itunes.apple.com/cn/app/yi-chuang-cai-fu-tong/id948148133?mt=8',
+        download_url: 'https://yxcdn.95358.com/con/group1/M00/00/51/CuAMLWF5EACADxOUBNXZTmv3-G8651.apk',
+    }
+    $.ajax({
+        url: window.location.origin + '/download_link/config.json',
+        data: {},
+        type: 'get',
+        success: function (res) {
+            console.log('config', res)
+            configJson.isPublish = res.isPublish || configJson.isPublish
+            configJson.isCanWxOpenZFT = res.isCanWxOpenZFT || configJson.isCanWxOpenZFT
+            configJson.openNewZFTUrl = res.openNewZFTUrl || configJson.openNewZFTUrl
+            configJson.downloadNewZFTAPI = res.downloadNewZFTAPI || configJson.downloadNewZFTAPI
+            configJson.downloadNewZFTAPK = res.downloadNewZFTAPK || configJson.downloadNewZFTAPK
+            configJson.downloadNewZFTHonorID = res.downloadNewZFTHonorID || configJson.downloadNewZFTHonorID
+            configJson.downloadNewZFTHuaweiID = res.downloadNewZFTHuaweiID || configJson.downloadNewZFTHuaweiID
+            configJson.downloadNewZFTOppoID = res.downloadNewZFTOppoID || configJson.downloadNewZFTOppoID
+            configJson.downloadNewZFTVivoID = res.downloadNewZFTVivoID || configJson.downloadNewZFTVivoID
+            configJson.downloadNewZFTXiaomiID = res.downloadNewZFTXiaomiID || configJson.downloadNewZFTXiaomiID
+            configJson.downloadNewZFTiPad = res.downloadNewZFTiPad || configJson.downloadNewZFTiPad
+            configJson.downloadNewZFTiPhone = res.downloadNewZFTiPhone || configJson.downloadNewZFTiPhone
+            configJson.download_url = res.download_url || configJson.download_url
+
+            // ======================处理微信环境按钮显示逻辑 start===========================
+            // todo 支持url传参控制
+            if (configJson.isCanWxOpenZFT || getQueryVariable('isCanWxOpenZFT')) {
+                //判断微信打开
+                var ua = navigator.userAgent;
+                if (/MicroMessenger/gi.test(ua)) {
+                    var extinfo = {
+                        "funcType": '2',
+                        "funcId": '10061',
+                        "url": base.decode(getQueryVariable('redirect'))
+                    }
+                    $("#launch-btn").attr('extinfo', JSON.stringify(extinfo));
+
+                    $('#downLoadByIOS').hide()
+                    $('#imgLogo').hide()
+                    $('#wxopenappBtn').show()
+
+                } else {
+
+                    // 202310 IOS 展示两个按钮，不尝试自动打开app
+                    if(/iPhone/gi.test(navigator.userAgent)){
+                        $('#imgLogo').hide()
+                        $('#downLoadByIOS').show()
+                    }else{
+                        $('#imgLogo').show()
+                        $('#downLoadByIOS').hide()
+                    }
+                    $('#wxopenappBtn').hide()
+
+                }
+            }
+            if(navigator.userAgent.match(/android/i)){
+                hrefOk(false)
+            }
+        },
+        error: function (res) {
+            if(navigator.userAgent.match(/android/i)){
+                hrefOk(false)
+            }
+        },
+    })
+
+
+    /**
+     * 跳转页面
+     * 启动app需要的时间较长，js中断时间长，如果没安装，js瞬间就执行完毕。
+     * */
+    function go() {
+        // 带有downFlag参数则是强制下载apk或者调苹果商城，不需要跳转
+        if (getQueryVariable('downFlag')) return
+        var gohref = 'tzt://com.frist/'
+        if (getQueryVariable('redirect')) {
+            if (navigator.userAgent.match(/android/i)) {
+                console.log('isAndroid', 'tzt://com.frist/?openUrl=' + encodeURIComponent(base.decode(getQueryVariable('redirect'))))
+                gohref = 'tzt://com.frist/?openUrl=' + encodeURIComponent(base.decode(getQueryVariable('redirect')));
+            } else {
+                console.log('ios', 'tzt://com.frist/?url=' + base.decode(getQueryVariable('redirect')))
+                gohref = 'tzt://com.frist/?url=' + base.decode(getQueryVariable('redirect'));
+            }
+        }
+        try {
+            window.location = gohref;
+        } catch(e) {}
+    }
+
+    // 唤起应用商店
+    function loadingFn() {
+        var ua = navigator.userAgent;
+        if (getQueryVariable('redirect')) {
+            if (/Android/gi.test(ua) && getQueryVariable('downFlag') == '1') {
+                window.location = 'https://cdn.fcsc.cn/yczft/app/FCSC-ZFT.apk';
+                return;
+            }
+            //判断浏览器
+            if (/iPhone/gi.test(ua)) {
+                var isrefresh = getQueryString('refresh');
+                if (isrefresh == 1) {
+                    window.location = "https://itunes.apple.com/cn/app/yi-chuang-cai-fu-tong/id948148133?mt=8";
+                    return;
+                }
+
+                var loadDateTime = new Date();
+
+                window.setTimeout(function () {
+                    var timeOutDateTime = new Date();
+                    if (timeOutDateTime - loadDateTime < 5000) {
+                        window.location = window.location.href + "?refresh=1";
+                    } else {
+                        window.close();
+                    }
+                }, 2000);
+
+                window.location = "uplusapp://open";
+                return;
+            }
+
+            if (/iPad/gi.test(ua)) {
+                var isrefresh = getQueryString('refresh');
+                if (isrefresh == 1) {
+                    window.location = "https://itunes.apple.com/cn/app/yi-chuang-cai-fu-tong/id948148133?mt=8";
+                    return;
+                }
+                var loadDateTime = new Date();
+                window.setTimeout(function () {
+                    var timeOutDateTime = new Date();
+                    if (timeOutDateTime - loadDateTime < 5050) {
+                        window.location = window.location.href + "?refresh=1";
+                    } else {
+                        window.close();
+                    }
+                }, 2000);
+                window.location = "uplusapp://open";
+                return;
+            }
+
+            if (/Android/gi.test(ua)) {
+                var isrefresh = getQueryString('refresh');
+                if (isrefresh == 1) {
+                    if (/Huawei/gi.test(ua)) {
+                        window.setTimeout(function () {
+                            window.location = "https://appstore.huawei.com/app/C10376203";
+                            return;
+                        }, 6000);
+                        window.location = "market://com.huawei.appmarket.applink?appId=C10376203";
+                        return;
+                    }else if (/Honor/gi.test(ua)) {
+                        window.setTimeout(function () {
+                            window.location = "https://appstore.huawei.com/app/C10376203";
+                            return;
+                        }, 6000);
+                        window.location = "market://com.huawei.appmarket.applink?appId=C10376203";
+                        return;
+                    }else if (/Xiaomi/gi.test(ua)) {
+                        window.setTimeout(function () {
+                            window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                            return;
+                        }, 2000);
+                        window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                        return;
+                    } else if (/; MI /g.test(ua)) {
+                        window.setTimeout(function () {
+                            window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                            return;
+                        }, 2000);
+                        window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                        return;
+                    } else if (/; MIX /g.test(ua)) {
+                        window.setTimeout(function () {
+                            window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                            return;
+                        }, 2000);
+                        window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                        return;
+                    }else if (/Redmi/gi.test(ua)) {
+                        window.setTimeout(function () {
+                            window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                            return;
+                        }, 2000);
+                        window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                        return;
+                    }else if (/Oppo/gi.test(ua)) {
+                        window.setTimeout(function () {
+                            window.close();
+                        }, 2000);
+                        window.location = "market://details?id=com.firstcapital&ref=search";
+                        return;
+                    }else if (/Vivo/gi.test(ua)) {
+                        window.setTimeout(function () {
+                            window.close();
+                        }, 2000);
+                        window.location = "market://details?id=com.firstcapital&ref=search&th_name=com.bbk.appstore";
+                        return;
+                    } else {
+                        window.setTimeout(function () {
+                            window.close();
+                        }, 2000);
+                        // window.location = "https://a.app.qq.com/o/simple.jsp?pkgname=com.firstcapital";
+                        window.location = 'https://cdn.fcsc.cn/yczft/app/FCSC-ZFT.apk'
+                        return;
+                    }
+                }
+            }
+
+            var loadDateTime = new Date();
+
+            window.setTimeout(function () {
+                var timeOutDateTime = new Date();
+                var t = timeOutDateTime - loadDateTime;
+                if (t < 2050) {
+                    window.location = window.location.href + "?refresh=1";
+                } else {
+                    window.close();
+                }
+            }, 2000);
+
+            window.location = "uplusapp://open";
+            return;
+        } else {
+            if (/Android/gi.test(ua) && getQueryVariable('downFlag') == '1') {
+                window.location = 'https://cdn.fcsc.cn/yczft/app/FCSC-ZFT.apk';
+                return;
+            }
+            //判断浏览器
+            if (/iPhone/gi.test(ua)) {
+                var isrefresh = getQueryString('refresh');
+                if (isrefresh == 1) {
+                    window.location = "https://itunes.apple.com/cn/app/yi-chuang-cai-fu-tong/id948148133?mt=8";
+                    return;
+                }
+
+                var loadDateTime = new Date();
+
+                window.setTimeout(function () {
+                    var timeOutDateTime = new Date();
+                    if (timeOutDateTime - loadDateTime < 5000) {
+                        window.location = window.location.href + "?refresh=1";
+                    } else {
+                        window.close();
+                    }
+                }, 2000);
+
+                window.location = "uplusapp://open";
+                return;
+            }
+
+            if (/iPad/gi.test(ua)) {
+                var isrefresh = getQueryString('refresh');
+                if (isrefresh == 1) {
+                    window.location = "https://itunes.apple.com/cn/app/yi-chuang-cai-fu-tong/id948148133?mt=8";
+                    return;
+                }
+                var loadDateTime = new Date();
+                window.setTimeout(function () {
+                    var timeOutDateTime = new Date();
+                    if (timeOutDateTime - loadDateTime < 5050) {
+                        window.location = window.location.href + "?refresh=1";
+                    } else {
+                        window.close();
+                    }
+                }, 2000);
+
+                window.location = "uplusapp://open";
+                return;
+            }
+            //按钮变两个
+            if (/Android/gi.test(ua)) {
+                $('#imgLogo').hide();
+                $("#downLoad").show();
+            }
+
+            //结尾
+        }
+    }
+
+
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return 1;
+    }
+
+
+    // 监听error 函数
+    function handleErrorFn(e) {
+        console.log('跳转失败', JSON.stringify(e))
+        var _msgwarp = document.getElementById("msgwarp");
+        _msgwarp.setAttribute("style", "display:block");
+    }
+
+    // 监听launch 函数
+    function handleLaunchFn(e) {
+        console.log('跳转成功', JSON.stringify(e))
+    }
+
+    // ----------------------------处理微信环境按钮显示逻辑 end---------------------
+
+    // hrefOk(false)
+
+    function goOfficial() {
+        window.location = 'https://cdn.fcsc.cn/yczft/app/FCSC-ZFT.apk'
+        return;
+    }
+
+    function goApplication() {
+        var ua = navigator.userAgent;
+        var isrefresh = getQueryString('refresh');
+        if (isrefresh == 1) {
+            if (/Huawei/gi.test(ua)) {
+                window.setTimeout(function () {
+                    window.location = "https://appstore.huawei.com/app/C10376203";
+                    return;
+                }, 6000);
+                window.location = "market://com.huawei.appmarket.applink?appId=C10376203";
+                return;
+            }
+
+            //荣耀
+            else if (/Honor/gi.test(ua)) {
+                window.setTimeout(function () {
+                    window.location = "https://appstore.huawei.com/app/C10376203";
+                    return;
+                }, 6000);
+                window.location = "market://com.huawei.appmarket.applink?appId=C10376203";
+                return;
+            }
+
+            //小米
+            else if (/Xiaomi/gi.test(ua)) {
+                window.setTimeout(function () {
+                    window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                    return;
+                }, 2000);
+                window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                return;
+            } else if (/; MI /g.test(ua)) {
+                window.setTimeout(function () {
+                    window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                    return;
+                }, 2000);
+                window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                return;
+            } else if (/; MIX /g.test(ua)) {
+                window.setTimeout(function () {
+                    window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                    return;
+                }, 2000);
+                window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                return;
+            }
+
+            //红米
+            else if (/Redmi/gi.test(ua)) {
+                window.setTimeout(function () {
+                    window.location = "http://app.mi.com/details?id=com.firstcapital&ref=search";
+                    return;
+                }, 2000);
+                window.location = "mimarket://details?id=com.firstcapital&ref=search";
+                return;
+            }
+            //OPPO
+            else if (/Oppo/gi.test(ua)) {
+                window.setTimeout(function () {
+                    window.close();
+                }, 2000);
+                window.location = "market://details?id=com.firstcapital&ref=search";
+                return;
+            }
+            //Vivo
+            else if (/Vivo/gi.test(ua)) {
+                window.setTimeout(function () {
+                    window.close();
+                }, 2000);
+                window.location = "market://details?id=com.firstcapital&ref=search&th_name=com.bbk.appstore";
+                return;
+            }
+        }
+
+        var loadDateTime = new Date();
+        window.setTimeout(function () {
+            var timeOutDateTime = new Date();
+            var t = timeOutDateTime - loadDateTime;
+            if (t < 2050) {
+                window.location = window.location.href + "?refresh=1";
+            } else {
+                window.close();
+            }
+        }, 2000);
+
+        window.location = "uplusapp://open";
+        return;
+    }
+
+    /**
+     * 内嵌 iframe,如果有iframeUrl地址传入，优先展示iframeUrl地址
+     * */
+    function ishasIframeUrl() {
+        var iframeUrl = getQueryVariable('iframeUrl')
+        if (iframeUrl) {
+            $('iframe').attr('src', base.decode(iframeUrl))
+            if (iframeDataURITest()) {
+                $('#isIframe').show()
+                $('#noIframe').hide()
+                return
+            }
+        }
+        $('#isIframe').hide()
+        $('#noIframe').show()
+    }
+
+    ishasIframeUrl()
+
+    /**
+     * 判断是否支持 iframe
+     * */
+    function iframeDataURITest() {
+        var support,
+            iframe = document.getElementById('ifra')
+        try {
+            support = !!iframe.contentDocument;
+            console.log('判断是否支持', support)
+        } catch (e) {
+            support = false;
+        }
+        return support;
+    }
+
+</script>
+
+</body>
 </html>
