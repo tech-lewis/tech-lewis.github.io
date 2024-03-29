@@ -402,32 +402,19 @@
     }
     var wxParam = {};
     var wx_share = function (param, url) {
-        $.ajax({
-            url: wxheader.bankHeader,
-            data: url,
-            type: 'get',
-            success: function (res) {
-                var res = JSON.parse(res);
-                console.log(res)
-                alert(res)
-                if (res.error_no == 0) {
-                    var data = res.results[0];
-                    wxParam = param;
-                    // 分享配置
-                    wx.config({
-                        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                        appId: data.appid, // 必填，企业号的唯一标识
-                        timestamp: data.timestamp, // 必填，生成签名的时间戳
-                        nonceStr: data.nonceStr, // 必填，生成签名的随机串
-                        signature: data.signature,// 必填，签名，见附录1
-                        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'],  // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-                        openTagList: ['wx-open-launch-app'], // 这里要配置一下,需要用的开放标签
-                    });
-                }
-            },
-            error: function (res) {
-            }
-        })
+        let res = {"error_no":"0","results":[{"timestamp":"1711678663","appid":"wx53a4376a011988c9","nonceStr":"4c4a5fb5-e715-4bd9-b4e5-8d05245ccc9a","jsapi_ticket":"kgt8ON7yVITDhtdwci0qeWZ-uR-FLlWb-M4sebrwjXFEqMbNTH6-32C4C4wcycb6tpsJW1jpuWeL3HlOu7UoXA","signature":"81754cdee523e19fe357118bc1f4d04be202fce1"}],"dsName":["results"],"error_info":""}
+        var data = res.results[0];
+        wxParam = param;
+        // 分享配置
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: data.appid, // 必填，企业号的唯一标识
+            timestamp: data.timestamp, // 必填，生成签名的时间戳
+            nonceStr: data.nonceStr, // 必填，生成签名的随机串
+            signature: data.signature,// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'],  // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            openTagList: ['wx-open-launch-app'], // 这里要配置一下,需要用的开放标签
+        });
     }
 
     wx_share({
