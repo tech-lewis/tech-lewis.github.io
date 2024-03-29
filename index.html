@@ -397,8 +397,8 @@
 
     window.onresize = adjuest;
     var wxheader = {
-        bankHeader: window.location.href.indexOf('https://digit.95358.com') != -1 ? 'https://yccft.fcsc.com/servlet/json' : 'https://wxnewtest.fcsc.com/servlet/json',
-        weixinpk: window.location.href.indexOf('https://digit.95358.com') != -1 ? 'gh_2bf428b04db6' : 'gh_d726bbfffcf2'
+        bankHeader: 'https://yccft.fcsc.com/servlet/json',
+        weixinpk: 'gh_2bf428b04db6' // : 'gh_d726bbfffcf2'
     }
     var wxParam = {};
     var wx_share = function (param, url) {

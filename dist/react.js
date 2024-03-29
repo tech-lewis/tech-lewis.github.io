@@ -1,5 +1,5 @@
 'use strict';
-
+// version 0.2.1
 var core = require('./lib/core.js');
 
 module.exports = require('./lib/dsl.js');  // core + default dsl
